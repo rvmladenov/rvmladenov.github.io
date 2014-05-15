@@ -11,7 +11,7 @@ public class SortArrayOfStrings {
 		String[] strArr = new String[number];
 
 		for (int i = 0; i < number; i++) {
-			strArr[i] = n.nextLine();
+			strArr[i] = n.next("\\w+");
 		}
 		n.close();
 		
