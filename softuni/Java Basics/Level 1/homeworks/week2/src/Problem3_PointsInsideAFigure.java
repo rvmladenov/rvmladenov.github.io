@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Problem3_PointsInsideAFigure {
 
 	public static void main(String[] args) {
