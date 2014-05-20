@@ -10,7 +10,7 @@ public class Problem6_RandomHandsOf5Cards {
 			
 			int n = sc.nextInt();
 			for (int i = 0; i < n; i++) {
-				System.out.printf("%1$s %2$s %3$s %4$s %5$s");
+				System.out.printf("%1$s\n", getRandCards());
 			}
 		}
 	}
@@ -35,8 +35,8 @@ public class Problem6_RandomHandsOf5Cards {
 	}
 	
 	public static int randInt() {
-		int min = 1;
-		int max = 52;
+		int min = 0;
+		int max = 51;
 	    Random rand = new Random();
 	    
 	    int randomNum = rand.nextInt((max - min) + 1) + min;
