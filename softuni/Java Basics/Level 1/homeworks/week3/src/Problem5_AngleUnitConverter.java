@@ -35,10 +35,10 @@ public class Problem5_AngleUnitConverter {
 		
 		switch (measure) {
 			case "deg":
-				result = ((num*Math.PI)/180);
+				result = getRadToDeg(num);
 			break;
 			case "rad":
-				result = ((num*180)/Math.PI);
+				result = getDegToRad(num);
 			break;
 	
 			default:
@@ -46,5 +46,13 @@ public class Problem5_AngleUnitConverter {
 		}
 		
 		return result;
+	}
+	
+	private static double getRadToDeg(double num) {
+		return ((num*Math.PI)/180);
+	}
+	
+	private static double getDegToRad(double num) {
+		return ((num*180)/Math.PI);
 	}
 }

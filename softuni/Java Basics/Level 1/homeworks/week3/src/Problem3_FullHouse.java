@@ -12,20 +12,22 @@ public class Problem3_FullHouse {
 
 		int count = 0;
 
-		for (int i = 0; i < faces.length; i++) { // номер на първите карти
-			for (int j = 0; j < faces.length; j++) { // номер на вторите карти
-				for (int j2 = 0; j2 < suits.length; j2++) { // първа боя
-					for (int k = j2 + 1; k < suits.length; k++) {
-						for (int k2 = k + 1; k2 < suits.length; k2++) {
-							for (int l = 0; l < suits.length; l++) {
-								for (int l2 = l + 1; l2 < suits.length; l2++) {
-									if (i != j) {
+		int facesLength = faces.length;
+		int suitsLength = suits.length;
+		for (int faces1 = 0; faces1 < facesLength; faces1++) {
+			for (int faces2 = 0; faces2 < facesLength; faces2++) {
+				for (int suits1 = 0; suits1 < suitsLength; suits1++) {
+					for (int suits2 = suits1 + 1; suits2 < suitsLength; suits2++) {
+						for (int suits3 = suits2 + 1; suits3 < suitsLength; suits3++) {
+							for (int suits4 = 0; suits4 < suitsLength; suits4++) {
+								for (int suits5 = suits4 + 1; suits5 < suitsLength; suits5++) {
+									if (faces1 != faces2) {
 										System.out.printf(
 												"%s%c %s%c %s%c %s%c %s%c\n",
-												faces[i], suits[j2], faces[i],
-												suits[k], faces[i], suits[k2],
-												faces[j], suits[l], faces[j],
-												suits[l2]);
+												faces[faces1], suits[suits1], faces[faces1],
+												suits[suits2], faces[faces1], suits[suits3],
+												faces[faces2], suits[suits4], faces[faces2],
+												suits[suits5]);
 										count++;
 									}
 
