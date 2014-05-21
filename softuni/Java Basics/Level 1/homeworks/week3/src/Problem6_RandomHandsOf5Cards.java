@@ -22,6 +22,7 @@ public class Problem6_RandomHandsOf5Cards {
 		ArrayList<Integer> previousChoices = new ArrayList<>();
 		for (int i = 0; i < 5; i++) {
 			int randNum = randInt();
+			/* Валидира, че преди това не е било избран същия номер */
 			while (previousChoices.contains(randNum)) {
 				randNum = randInt();
 			}

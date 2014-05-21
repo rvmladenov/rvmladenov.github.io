@@ -24,7 +24,6 @@ public class Problem9_ListOfProducts {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(filePathIn))) {
 
-			System.out.println("Started reading the list ...");
 			
 			/* Fill the results from the "Input.txt" file */
 			String currentLine;
@@ -33,13 +32,11 @@ public class Problem9_ListOfProducts {
 				prod.addPriceAndName(new BigDecimal(splitted[1]), splitted[0]);
 			}
 			
-			System.out.println("Finished reading the list ...");
 		}
 
 		File outputFile = new File(filePathOut);
 		try (BufferedWriter brOut = new BufferedWriter(new FileWriter(outputFile))) {
 			
-			System.out.println("Started outputing the list ...");
 			
 			TreeMap<BigDecimal, String> productsTreeMap = prod.getProducts();
 
@@ -49,7 +46,6 @@ public class Problem9_ListOfProducts {
 				brOut.write(result);
 			}
 			
-			System.out.println("Finished outputing the list ...");
 		}
 
 	}
