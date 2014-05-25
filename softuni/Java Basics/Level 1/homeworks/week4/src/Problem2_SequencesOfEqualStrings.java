@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Problem2_SequencesOfEqualStrings {
 
 	public static void main(String[] args) {
-		try(Scanner sc = new Scanner(System.in)) {
+		try(Scanner sc = new Scanner(System.in)) { 
 			
 			String input = sc.nextLine();
 			String[] splited = input.split(" ");

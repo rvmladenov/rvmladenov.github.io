@@ -18,7 +18,7 @@ public class Problem3_LargestSequenceOfEqualStrings {
 				} else {
 					counterTemp = 1;
 				}
-				if (counterTemp > counter) {
+				if (counterTemp > counter) { 
 					counter = counterTemp;
 					positionOfWord = i;
 				}
