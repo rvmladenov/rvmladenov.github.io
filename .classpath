@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="Deck-of-cards/" kind="src" path="softuni/Level 1/Java Basics/homeworks/week1"/>
+	<classpathentry kind="src" path="softuni/Level 1/Java Basics/homeworks/week1/Deck-of-cards"/>
+	<classpathentry kind="src" path="softuni/Level 1/Java Basics/homeworks/week2/src"/>
+	<classpathentry kind="src" path="softuni/Level 1/Java Basics/homeworks/week3/src"/>
+	<classpathentry kind="src" path="softuni/Level 1/Java Basics/homeworks/week4/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="softuni/Level 1/Java Basics/homeworks/week4/bin"/>
+</classpath>
