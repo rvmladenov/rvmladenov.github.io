@@ -80,6 +80,30 @@ article {
 }
 #webColors {
     border-radius: 10px;
-    line-height: 73px;
+    line-height: 53px;
     background-color: red;
+    color: #fff;
+    padding: 10px 10px 10px 16px;
+    font-size: 36px;
+    padding-left: 16px;
+    margin-bottom: 5px;
+}
+#webColors + div {
+    font-size: 20px;
+}
+#webColors + div::first-letter {
+    font-size: 80px;
+    font-style: italic;
+    padding-left: 5px;
+}
+#webColors + div::first-line{
+    font-style: italic;
+}
+article footer {
+    margin-top: 5px;
+}
+article footer a {
+    font-style:italic;
+    color: #808080;
+    font-size: 20px;
 }
