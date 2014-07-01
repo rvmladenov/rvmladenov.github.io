@@ -62,8 +62,23 @@ nav li > a {
 nav li > a:visited {
     color: gray;
 }
-nav li > a:hover {
+li:nth-child(1) a:hover {
     background-color: #ff0000;
+}
+li:nth-child(2) a:hover {
+    background-color: #00ff00;
+}
+li:nth-child(3) a:hover {
+    background-color: yellow;
+}
+li:nth-child(4) a:hover {
+    background-color: #fff;
+}
+li:nth-child(5) a:hover {
+    background-color: orange;
+}
+li:nth-child(6) a:hover {
+    background-color: brown;
 }
 nav > header {
     text-decoration: underline;
@@ -72,31 +87,47 @@ nav > header {
 }
 article {
     background-color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 20px;
     box-sizing: border-box;
     padding: 20px;
     padding-top: 18px;
     border-radius: 26px;
 }
 #webColors {
-    border-radius: 10px;
-    line-height: 53px;
     background-color: red;
-    color: #fff;
-    padding: 10px 10px 10px 16px;
-    font-size: 36px;
-    padding-left: 16px;
-    margin-bottom: 5px;
 }
-#webColors + div {
+#webSafeColors {
+    background-color: #ffa500;
+    color: #000;
+}
+#RGB {
+    background-color: #ffff00;
+    color: #000;
+}
+#RGBA {
+    background-color: #008000;
+}
+header[id="#HSLHSV"] {
+    background-color: #0000ff;
+}
+header[id="#lorem"] {
+    background-color: #800080;
+}
+header[id="#lorem"] + span, 
+header[id="#lorem"] + span + span,
+section > article header + div {
     font-size: 20px;
 }
-#webColors + div::first-letter {
+header[id="#lorem"] + span {
+    color: #00008b;
+    font-style: italic;
+}
+section > article header + div::first-letter {
     font-size: 80px;
     font-style: italic;
     padding-left: 5px;
 }
-#webColors + div::first-line{
+header[id="#lorem"] span,
+section > article header + div::first-line{
     font-style: italic;
 }
 article footer {
@@ -106,4 +137,16 @@ article footer a {
     font-style:italic;
     color: #808080;
     font-size: 20px;
+}
+section > article {
+    margin-bottom: 12px;
+}
+section > article header {
+    color: #fff;
+    border-radius: 10px;
+    line-height: 53px;
+    padding: 10px 10px 10px 16px;
+    font-size: 36px;
+    padding-left: 16px;
+    margin-bottom: 5px;
 }
