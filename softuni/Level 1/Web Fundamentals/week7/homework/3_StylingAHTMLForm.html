@@ -7,9 +7,73 @@
     </head>
     <body>
         <form action="">
-            <section>
-                <h3>Step 1: Your details</h3>
-            </section>
+            <fieldset>
+                <legend>Step 1: Your details</legend>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" />
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" />
+                </div>
+                <div>
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Step 1: Delivery address</legend>
+                <div>
+                    <label for="address">Address</label>
+                    <textarea id="address"></textarea>
+                </div>
+                <div>
+                    <label for="postCode">Post code</label>
+                    <input type="text" id="postCode" />
+                </div>
+                <div>
+                    <label for="country">Country</label>
+                    <input type="text" id="country" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Step 1: Card details</legend>
+                <div>
+                    <span>Card type</span>
+                    <div>
+                        <div>
+                            <input type="radio" />
+                            <img sec="images/visa.png" alt="" />
+                            <span>ViSA</span>
+                        </div>
+                        <div>
+                            <input type="radio" />
+                            <img sec="images/amex.png" alt="" />
+                            <span>AmEx</span>
+                        </div>
+                        <div>
+                            <input type="radio" />
+                            <img sec="images/mastercard.png" alt="" />
+                            <span>Mastercard</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="cardNum">Card Number</label>
+                    <input type="text" id="cardNum" />
+                </div>
+                <div>
+                    <label for="secCode">Security Code</label>
+                    <input type="text" id="secCode" />
+                </div>
+                <div>
+                    <label for="cardName">Name of card</label>
+                    <input type="text" id="cardName" />
+                </div>
+            </fieldset>
+            <input type="Submit" value="BUY IT!" />
         </form>
     </body>
 </html>
