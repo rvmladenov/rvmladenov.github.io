@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/formBackground.jpg);
+    font-family: Tahoma;
+}
+fieldset {
+    border: 0;
+    padding-bottom: 7px;
+    padding-top: 8px;
+}
+legend {
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    margin-left: -2px;
+}
+fieldset > div {
+    background-color: rgba(255,255,255, 0.4);
+    padding: 4px 8px;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    margin-bottom: 1px;
+}
+form {
+    width: 369px;
+    margin-top: 16px;
+    margin-left: 2px;
+}
+label {
+    font-size: 12px;
+    display: inline-block;
+    width: 88px;
+}
+input {
+    line-height: 18px;
+    width: 177px;
+}
+label[for="address"] {
+    vertical-align: top;
+    padding-top: 5px;
+}
+textarea {
+    height: 77px;
+    width: 175px;
+    margin-bottom: 4px;
+}
+fieldset:last-of-type {
+    margin-top: 2px;
+}
+fieldset > div > div > div {
+    display: inline-block;
+}
+input[type="radio"] {
+    width: initial;
+    height: 9px;
+}
+span.biggerSpan {
+    font-size: 11px;
+}
+.radioGroup {
+    padding: 7px;
+}
