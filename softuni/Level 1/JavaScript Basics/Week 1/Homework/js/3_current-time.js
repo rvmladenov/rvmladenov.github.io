@@ -4,7 +4,7 @@ Date.prototype.getFullMinutes = function(minutes) {
     return (minutes < 10) ? '0' + minutes : minutes;
 }
 var dt1 = new Date();
-dt1.setHours("21", "034");
+dt1.setHours("21", "34");
 var dt2 = new Date();
 dt2.setHours("09", "57");
 var dt3 = new Date();
