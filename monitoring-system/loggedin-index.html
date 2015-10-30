@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Система за наблюдение</title>
+
+    <link href="css/root.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-3 col-sm-3">
+            <div class="panel panel-primary sidebar-systems">
+                <div class="panel-heading">Статуси на Системите</div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="./samples/stupid-demo-success.html" target="systems">
+                                <label class="btn success pull-right">OK</label>
+                                <label class="btn system-title">АВД 1</label>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="./samples/stupid-demo-failed.html" target="systems">
+                                <label class="btn error pull-right">F</label>
+                                <label class="btn system-title">АД 4</label>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="./samples/stupid-demo-warning.html" target="systems">
+                                <label class="btn warning pull-right">W</label>
+                                <label class="btn system-title">ВДТК</label>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="./samples/stupid-demo-success.html" target="systems">
+                                <label class="btn success pull-right">OK</label>
+                                <label class="btn system-title">ККР</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-9">
+            <iframe name="systems" frameborder="0" src="./samples/stupid-demo-success.html"></iframe>
+        </div>
+    </div>
+
+    <script scr="js/jquery.min.js"></script>
+</body>
+</html>
