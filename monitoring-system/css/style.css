@@ -68,16 +68,6 @@ Login Pages
 .login-form form .form-area .checkbox {
   margin-bottom: 20px;
 }
-.login-form .footer-links {
-  color: #76757B;
-  padding: 10px 5px;
-}
-.login-form .footer-links a {
-  color: #76757B;
-}
-.login-form .footer-links a:hover {
-  color: #37363e;
-}
 /* =================================================================================
 404 - 500 Pages
 ================================================================================= */
@@ -891,4 +881,15 @@ body > .container {
 
 .sidebar-systems .system-title {
     min-width: 90px;
+}
+
+.sidebar-menu {
+  color: #76757B;
+  padding: 10px 5px;
+}
+.sidebar-menu a {
+  color: #76757B;
+}
+.sidebar-menu a:hover {
+  color: #37363e;
 }
