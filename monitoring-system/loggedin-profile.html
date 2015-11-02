@@ -7,6 +7,7 @@
     <title>Система за наблюдение</title>
 
     <link href="css/root.css" rel="stylesheet" />
+    <link href="css/datetimepicker.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container-fluid">
@@ -65,26 +66,37 @@
                         <form action="#" class="form-horizontal">
                             <div class="col-md-3 text-center">
                                 <img src="img/user-thumb.jpg" class="profile-pic" alt="" />
-                                <h3>Шишко Шишковс</h3>
+                                <input type="file" name="image" class="form-control" />
                             </div>
                             <div class="col-md-9">
-
                                 <div class="form-area">
                                     <div class="group">
-                                        <input type="text" class="form-control" placeholder="Потребител">
-                                        <i class="fa fa-user"></i>
+                                        <input type="text" name="name" class="form-control" value="Петя Минкова" placeholder="Име" />
+                                        <i class="fa fa-home"></i>
                                     </div>
                                     <div class="group">
-                                        <input type="password" class="form-control" placeholder="Парола">
-                                        <i class="fa fa-key"></i>
+                                        <input type="text" name="job" class="form-control" value="Оператор" placeholder="Работна позиция" />
+                                        <i class="fa fa-suitcase"></i>
                                     </div>
-                                    <div class="checkbox checkbox-primary">
-                                        <input id="checkbox101" type="checkbox" checked="">
-                                        <label for="checkbox101"> Запомни ме</label>
+                                    <div class="group">
+                                        <input type="text" name="phone" class="form-control" value="0893456535" placeholder="Телефон" />
+                                        <i class="fa fa-phone"></i>
                                     </div>
-                                    <button type="submit" class="btn btn-info btn-block">ВХОД</button>
+                                    <div class="group">
+                                        <input type="text" name="male" class="form-control" value="мъж" placeholder="Пол" />
+                                        <i class="fa fa-male"></i>
+                                    </div>
+                                    <div class="group">
+                                        <input type="text" name="birthdate" class="form-control" value="11.11.2005 г." placeholder="Дата" />
+                                        <i class="fa fa-birthday-cake"></i>
+                                    </div>
+                                    <div class="group">
+                                        <textarea name="description" class="form-control">Може би някакво описание тук</textarea>
+                                        <i class="fa fa-file-text"></i>
+                                    </div>
+                                    <button type="submit" class="btn btn-info">ЗАПАМЕТИ</button>
+                                    <button type="reset" class="btn btn-info pull-right">ПРЕЗАРЕДИ</button>
                                 </div>
-
                             </div>
                         </form>
                     </div>
@@ -95,5 +107,15 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/datepicker/datetimepicker.full.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#birthdate').datetimepicker({
+                format:'d.m.Y'
+            });
+        });
+    </script>
+
 </body>
 </html>
