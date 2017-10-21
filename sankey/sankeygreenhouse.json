@@ -31,7 +31,7 @@
 {"source":"Electricity and heat","target":"Residential Buildings","value":"5.2"},
 {"source":"Electricity and heat","target":"T and D Losses","value":"2.2"},
 {"source":"Electricity and heat","target":"Unallocated Fuel Combustion","value":"2.0"},
-{"source":"Energy","target":"Electricity and heat","value":"24.9"},
+{"source":"Energy","target":"Carbon Dioxide","value":"2"},
 {"source":"Energy","target":"Fugitive Emissions","value":"4.0"},
 {"source":"Energy","target":"Industry","value":"14.7"},
 {"source":"Energy","target":"Other Fuel Combustion","value":"8.6"},

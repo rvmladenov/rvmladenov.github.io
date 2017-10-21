@@ -2,10 +2,14 @@ var myApp = angular.module('myApp', ['gridster']);
 
 myApp.controller('myCtrl', function ($scope, $window) {
 
+    var colors = ["#29B6B6", "#3D61C3", "#FFBF39", "#FF9339", "#623EC6", "#349D9D", "#445FA9", "#DCAD49", 
+        "#DC8C49", "#5C4894", "#189393", "#24449E", "#CE9722", "#CE7022", "#311480", "#4ACFCF", "#5C7DD8", 
+        "#FFCA5B", "#FFA55B", "#8C6EE2", "#5FCFCF", "#708CD8", "#FFD376", "#FFB476", "#A38DE2"];
+
     $scope.databaseCharts = [{
         gridSize: {
-            sizeX: 2,
-            sizeY: 1
+            sizeX: 3,
+            sizeY: 2
         },
         type: 'custom',
         chartConfig: {
@@ -57,8 +61,9 @@ myApp.controller('myCtrl', function ($scope, $window) {
 
         var units = "Widgets";
 
-        var margin = { top: 10, right: 10, bottom: 10, left: 10 },
-            width = document.getElementById("chart-parent").offsetWidth - margin.left - margin.right,
+        var padding = 100;
+        var margin = { top: 10, right: 10, bottom: 10, left: 100 },
+            width = document.getElementById("chart-parent").offsetWidth - padding - margin.left - margin.right,
             height = document.getElementById("chart-parent").offsetHeight - margin.top - margin.bottom;
 
         var formatNumber = d3.format(",.0f"),    // zero decimal places
@@ -69,8 +74,9 @@ myApp.controller('myCtrl', function ($scope, $window) {
         // append the svg canvas to the page
         var svg = d3.select("#chart")
             .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom);
+            .attr("width", document.getElementById('chart-parent').offsetWidth - padding)
+            .attr("height", height + margin.top + margin.bottom)
+            .attr("style", "padding-left: " + padding + "px");
 
         // Set the sankey diagram properties
         var sankey = d3.sankey()
@@ -132,29 +138,38 @@ myApp.controller('myCtrl', function ($scope, $window) {
             // add the rectangles for the nodes
             node.append("rect")
                 .attr("height", function (d) { return d.dy; })
+                .attr("rx", function (d) { return 2; })
+                .attr("ry", function (d) { return 2; })
                 .attr("width", sankey.nodeWidth())
-                .style("fill", function (d) {
-                    return d.color = color(d.name.replace(/ .*/, ""));
+                .style("fill", function (d, i) {
+                    return d.color = color(colors[i]);
                 })
                 .style("stroke", function (d) {
-                    return d3.rgb(d.color).darker(2);
+                    return d3.rgb(d.color).brighter(1);
                 })
                 .append("title")
                 .text(function (d) {
                     return d.name + "\n" + format(d.value);
-                });
+                })
+                .filter(function (d) { return d.x < width / 2; });
 
             // add in the title for the nodes
             node.append("text")
-                .attr("x", -6)
+                .attr("x", 40)
                 .attr("y", function (d) { return d.dy / 2; })
                 .attr("dy", ".35em")
-                .attr("text-anchor", "end")
+                .attr("text-anchor", "start")
                 .attr("transform", null)
-                .text(function (d) { return d.name; })
+                .text(function (d) { 
+                    if(d.name.length > 10)
+                        return d.name.substring(0, 10)+'...';
+                    else
+                        return d.name;
+                 })
+                 .attr('title', function(d){ return d.name; })
                 .filter(function (d) { return d.x < width / 2; })
-                .attr("x", 6 + sankey.nodeWidth())
-                .attr("text-anchor", "start");
+                .attr("x", -40 + sankey.nodeWidth())
+                .attr("text-anchor", "end");
 
             // the function for moving the nodes
             function dragmove(d) {
