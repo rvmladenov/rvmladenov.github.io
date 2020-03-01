@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.png"/>
+    <link rel="stylesheet" href="./styles/app.css" />
+
+    <script src="./vendors/jquery-3.4.1.min.js"></script>
+    
+    <title>Radoslav Mladenov task</title>
+</head>
+<body>
+    
+    <header>
+        <div>
+            <label for="sortType">Sort by:
+                <select id="sortType">
+                    <option value="0">Red</option>
+                    <option value="1">Green</option>
+                    <option value="2">Blue</option>
+                </select>
+        </div>
+        <div>
+            <form id="formSubmit">
+                <input type="text" id="searchValue" placeholder="Search by Title or HEX color code ..." />
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section id="app"></section>
+        <section id="load-more-btn-container">
+            <button class="bounce" id="showMoreImages"></button>
+        </section>
+    </main>
+
+    <footer>
+        <span>Created by Radoslav Mladenov for Embodee</span>
+    </footer>
+
+    <div id="page-loading" class="loading">
+        <div>
+            <img src="./images/loading-indicator.gif" alt="Loading page ..." />
+        </div>
+        <div>
+            <span>Loading ....</span>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            app.init();
+        });
+    </script>
+    <script src="./src/services/loading-indicator.service.js"></script>
+    <script src="./src/services/apiService.js"></script>
+    <script src="./src/services/colorService.js"></script>
+    <script src="./src/services/uiService.js"></script>
+    <script src="./src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+How To Run the task:
+
+1) Open the app by clicking on the index.html
+2) Install a npm package like http-server and run the following commands in a Shell of your choice
+    npm i -g http-server
+    http-server
+    click on the generated URL
