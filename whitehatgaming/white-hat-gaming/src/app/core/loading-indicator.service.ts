@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LoadingIndicatorService {
     private readonly id = 'loading-indicator';
-    public showLoadingIndicator$ = new BehaviorSubject(false);
+    public showLoadingIndicator$ = new BehaviorSubject(true);
 
     show() {
         this.showLoadingIndicator$.next(true);

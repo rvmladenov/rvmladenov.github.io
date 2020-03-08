@@ -1,1 +1,83 @@
-<p>games works!</p>
+
+<div *ngFor="let p of $">
+    <div *ngIf="p | async as post">
+         <pre>{{post | json}}</pre>
+ </div>
+
+<div id="ribbon-header">
+    <jqxRibbon #jqxRibbon
+            [selectedIndex]="0"
+            [width]="'100%'"
+            [height]="350"
+            [position]="'top'"
+            [selectionMode]="'click'"
+            [animationType]="'fade'">
+    <ul>
+        <li style="margin-left: 30px;">Browse Books</li>
+        <li>Shipping</li>
+        <li>About Us</li>
+    </ul>
+    <div>
+        <div>
+        <table style="width: 100%;">
+            <tr>
+            <td>
+                <b>Fiction</b>
+            </td>
+            <td>
+                <b>Biography</b>
+            </td>
+            <td>
+                <b>Science</b>
+            </td>
+            </tr>
+
+        </table>
+        </div>
+        
+        <div>
+        <table style="width:100%;">
+            <tr>
+            <td>
+                <a href="javascript:void(0)">Countries we ship to</a>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <a href="javascript:void(0)">Delivery options</a>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <a href="javascript:void(0)">Order cancellation and returns</a>
+            </td>
+            </tr>
+        </table>
+        </div>
+        
+        <div>
+        <table style="width: 100%;">
+            <tr>
+            <td>
+                <a href="javascript:void(0)">Contact us</a>
+            </td>
+            <td rowspan="3" style="width: 125px;"></td>
+            <td rowspan="3">
+                <img src="./../../../images/bookshop.png" />
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <a href="javascript:void(0)">Jobs</a>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <a href="javascript:void(0)">Affiliates</a>
+            </td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    </jqxRibbon>
+</div>
