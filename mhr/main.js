@@ -210,7 +210,7 @@ class ArticlesService {
         this.http = http;
     }
     getAllArticles() {
-        return this.http.get('/assets/data/sample-articles.json');
+        return this.http.get('assets/data/sample-articles.json');
     }
 }
 ArticlesService.ɵfac = function ArticlesService_Factory(t) { return new (t || ArticlesService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
