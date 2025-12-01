@@ -1,5 +1,5 @@
 import { GamesModel } from 'src/app/shared/games.model';
-import { GamesActions, GamesAction, CategoriesAction, JackpotsAction, CombinedGamesAction } from '../actions/games.actions';
+import { GamesActions, GamesAction, CategoriesAction, JackpotsAction, CombineGamesAction, UpdatedGamesAction } from '../actions/games.actions';
 import { ActionsMap } from 'src/app/shared/actions.map';
 import { Action } from '@ngrx/store';
 import { JackpotGamesModel } from '@app/shared/jackpots.model';
@@ -8,21 +8,21 @@ export interface GamesState {
     games: GamesModel[],
     jackpots: JackpotGamesModel[],
     categories: string[],
-    combinedGames: GamesModel[]
+    updatedGames: GamesModel[]
 }
 
 export const initialRendererState: GamesState = {
     games: [],
     jackpots: [],
     categories: [],
-    combinedGames: []
+    updatedGames: []
 };
 
 function games(state: GamesState, action: GamesAction) {
-    const gamesState = Object.assign({}, state);
-    gamesState.games = action.payload;
+    const games = Object.assign({}, state);
+    games.games = action.payload;
 
-    return {...state, ...gamesState};
+    return {...state, ...games};
 }
 
 function categories(state: GamesState, action: CategoriesAction) {
@@ -39,9 +39,9 @@ function jackpots(state: GamesState, action: JackpotsAction) {
     return {...state, ...jackpotsState};
 }
 
-function combinedGames(state: GamesState, action: CombinedGamesAction) {
+function updatedGames(state: GamesState, action: UpdatedGamesAction) {
     const combinedState = Object.assign({}, state);
-    combinedState.combinedGames = action.payload;
+    combinedState.updatedGames = action.payload;
 
     return {...state, ...combinedState};
 }
@@ -50,7 +50,7 @@ const reducerMap: ActionsMap<GamesState> = {
     [GamesActions.Games]: games,
     [GamesActions.Categories]: categories,
     [GamesActions.Jackpots]: jackpots,
-    [GamesActions.Combined]: combinedGames
+    [GamesActions.UpdatedGames]: updatedGames
 };
 
 export function reducer(state = initialRendererState, action: Action): GamesState {

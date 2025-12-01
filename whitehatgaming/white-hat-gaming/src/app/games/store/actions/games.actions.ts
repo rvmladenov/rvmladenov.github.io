@@ -6,7 +6,8 @@ export const GamesActions = {
     Games: '[Games] List of games',
     Categories: '[Categories] List of categories',
     Jackpots: '[Jackpots] List of jackpots',
-    Combined: '[Combined] List of merged games and jackpots in one'
+    Combined: '[Combined] Combines the games and the jackpot lists',
+    UpdatedGames: '[Combined] List of merged games and jackpots in one'
 };
 
 export class GamesAction implements Action {
@@ -24,7 +25,11 @@ export class JackpotsAction implements Action {
     constructor(public payload: JackpotGamesModel[]) { }
 }
 
-export class CombinedGamesAction implements Action {
-    readonly type = GamesActions.Combined;
+export class UpdatedGamesAction implements Action {
+    readonly type = GamesActions.UpdatedGames;
     constructor(public payload: GamesModel[]) { }
+}
+
+export class CombineGamesAction implements Action {
+    readonly type = GamesActions.Combined;
 }

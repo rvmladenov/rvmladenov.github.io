@@ -1,0 +1,29 @@
+$outline-color: #0E0E0E;
+$body-background-color: #FEFEFE;
+
+$header-background: #3F3F3F;
+$header-text-hover-color: #90C300;
+$text-color: #fff;
+
+.jqx-widget {
+    color: $text-color;
+}
+
+.jqx-widget-header {
+    background-color: $header-background;
+}
+
+.jqx-ribbon-item-top {
+    text-transform: capitalize;
+    border: 0;
+    margin: 0;
+    padding: 0 25px;
+}
+
+.jqx-ribbon-item-selected {
+    background-color: $header-text-hover-color;
+}
+
+.jqx-widget-content {
+    border: 0;
+}

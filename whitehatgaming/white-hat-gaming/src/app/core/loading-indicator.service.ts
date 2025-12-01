@@ -13,6 +13,8 @@ export class LoadingIndicatorService {
     }
     
     hide() {
-        this.showLoadingIndicator$.next(false);
+        setTimeout(() => {
+            this.showLoadingIndicator$.next(false);
+        }, 1000)
     }
 }

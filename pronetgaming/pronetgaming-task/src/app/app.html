@@ -1,0 +1,36 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #start>
+    <mat-nav-list (click)="start.close()">
+      <a mat-list-item routerLink="/list">
+        <mat-icon>library_books</mat-icon>
+        <span>Ice and Fire</span>
+      </a>
+      <a mat-list-item routerLink="/favorites">
+        <mat-icon>favorite</mat-icon>
+        <span>Favorites</span>
+      </a>
+      <a mat-list-item routerLink="/login">
+        <mat-icon>account_circle</mat-icon>
+        <span>Login</span>
+      </a>
+      <a mat-list-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button class="menu-button" mat-icon-button (click)="start.open('mouse')">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  @if (loading$ | async) {
+  <div class="spinner-container">
+    <mat-spinner />
+  </div>
+  }
+
+  <router-outlet />
+</mat-sidenav-container>

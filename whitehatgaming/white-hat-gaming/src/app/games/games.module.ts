@@ -7,8 +7,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { GamesRoutingModule } from './games-routing.module';
 import { jqxRibbonModule } from 'jqwidgets-ng/jqxribbon';
 import { EffectsModule } from '@ngrx/effects';
-import { categoriesSelector, combinedgamesSelector, jackpotsSelector, gamesSelector } from './store/selectors/games.selector';
-import { CategoriesToken, CombinedGamesToken, JackpotsToken, GamesToken } from './store/games.tokens';
+import { categoriesSelector, updatedGamesSelector, jackpotsSelector, gamesSelector } from './store/selectors/games.selector';
+import { CategoriesToken, UpdatedGamesToken, JackpotsToken, GamesToken } from './store/games.tokens';
 import { GamesEffects } from './store/effects/games.effects';
 
 @NgModule({
@@ -28,7 +28,7 @@ import { GamesEffects } from './store/effects/games.effects';
     providers: [
         HttpClient,
         {
-            provide: CombinedGamesToken, useFactory: (store) => store.select(combinedgamesSelector),
+            provide: UpdatedGamesToken, useFactory: (store) => store.select(updatedGamesSelector),
             deps: [Store]
         },
         {

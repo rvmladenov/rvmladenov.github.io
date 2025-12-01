@@ -1,0 +1,23 @@
+<section class="section-ice-and-fire">
+  <h2>Favorites list</h2>
+  <section class="section-filter">
+    <app-list-filter
+      [books]="books"
+      [characters]="characters"
+      [houses]="houses"
+      (booksChange)="onBooksChange($event)"
+      (charactersChange)="onCharactersChange($event)"
+      (housesChange)="onHousesChange($event)"
+      (reset)="onReset()"
+    ></app-list-filter>
+  </section>
+
+  <section class="section-data">
+    <app-list
+      [books]="books"
+      [characters]="characters"
+      [houses]="houses"
+      [favorites]="(favorites$ | async) ?? undefined"
+    ></app-list>
+  </section>
+</section>

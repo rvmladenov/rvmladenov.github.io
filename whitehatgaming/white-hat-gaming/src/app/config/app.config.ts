@@ -6,3 +6,5 @@ export const API_URLS = {
 }
 
 export const GAMES_RELOAD_TIMEOUT = 3000;
+
+export const JACKPOT_CURRENCY = '&euro'; // There is no configuration for the jackpot amount currency so I am using € based on the design

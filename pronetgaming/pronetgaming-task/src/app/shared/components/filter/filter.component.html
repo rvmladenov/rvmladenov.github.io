@@ -1,0 +1,14 @@
+<form [formGroup]="formFilter" (ngSubmit)="onFilter()">
+  <mat-form-field>
+    <input matInput placeholder="Filter the lists" formControlName="filterInput" />
+  </mat-form-field>
+  <button mat-raised-button color="secondary" (click)="onReset()">Reset</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="!formFilter.controls['filterInput'].value"
+    type="submit"
+  >
+    Search
+  </button>
+</form>

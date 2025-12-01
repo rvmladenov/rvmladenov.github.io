@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { switchMap, withLatestFrom } from 'rxjs/operators';
 import { of, Observable } from 'rxjs';
-import { GamesActions, JackpotsAction, CombinedGamesAction } from '../actions/games.actions';
+import { GamesActions, JackpotsAction, CombineGamesAction, UpdatedGamesAction } from '../actions/games.actions';
 import { GamesToken, JackpotsToken } from '../games.tokens';
 import { GamesModel } from '@app/shared/games.model';
 import { JackpotGamesModel } from '@app/shared/jackpots.model';
@@ -17,7 +17,7 @@ export class GamesEffects {
 
     @Effect()
     fetchCombinedGames$ = this.actions$.pipe(
-      ofType<CombinedGamesAction>(GamesActions.Combined),
+      ofType<CombineGamesAction>(GamesActions.Combined),
       withLatestFrom(this.games$, this.jackpots$),
       switchMap(([__, gamesList, jackpots]: [any, GamesModel[], JackpotGamesModel[]]) => {
 
@@ -44,7 +44,7 @@ export class GamesEffects {
         });
 
         // return new combined games action
-        return of(new CombinedGamesAction(combinedGamesResult));
+        return of(new UpdatedGamesAction(combinedGamesResult));
       })
     );
 }

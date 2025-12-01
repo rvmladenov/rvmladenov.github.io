@@ -1,0 +1,115 @@
+<section class="section-data-list">
+  <mat-tab-group>
+    <mat-tab label="books">
+      <mat-list role="list">
+        @for (book of books(); track book.url) {
+        <mat-list-item role="listitem">
+          <mat-grid-list cols="2">
+            <mat-grid-tile>
+              <a [routerLink]="['/list/details', 'book', book.url.split('/').pop()]">
+                {{ book.name }}
+              </a>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              @if (!isInFavorites(book.url.split('/').pop(), 'book')) {
+              <a
+                matMiniFab
+                aria-label="Add to favorites"
+                (click)="onAddToFavorites(book.url.split('/').pop() ?? '', book, 'book')"
+              >
+                <mat-icon>favorite</mat-icon>
+              </a>
+              } @else {
+              <a
+                matMiniFab
+                aria-label="Remove from favorites"
+                (click)="onRemoveFromFavorites(book.url.split('/').pop() ?? '', 'book')"
+              >
+                <mat-icon>remove_circle</mat-icon>
+              </a>
+              }
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-list-item>
+        } @empty {
+        <p>No Records found</p>
+        }
+      </mat-list>
+    </mat-tab>
+
+    <mat-tab label="characters">
+      <mat-list role="list">
+        @for (character of characters(); track character.url) {
+        <mat-list-item role="listitem">
+          <mat-grid-list cols="2">
+            <mat-grid-tile>
+              <a [routerLink]="['/list/details', 'character', character.url.split('/').pop()]">
+                {{ character.name || character.url }}
+              </a>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              @if (!isInFavorites(character.url.split('/').pop(), 'character')) {
+              <a
+                matMiniFab
+                aria-label="Add to favorites"
+                (click)="
+                  onAddToFavorites(character.url.split('/').pop() ?? '', character, 'character')
+                "
+              >
+                <mat-icon>favorite</mat-icon>
+              </a>
+              } @else {
+              <a
+                matMiniFab
+                aria-label="Remove from favorites"
+                (click)="onRemoveFromFavorites(character.url.split('/').pop() ?? '', 'character')"
+              >
+                <mat-icon>remove_circle</mat-icon>
+              </a>
+              }
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-list-item>
+        } @empty {
+        <p>No Records found</p>
+        }
+      </mat-list>
+    </mat-tab>
+    <mat-tab label="houses">
+      <mat-list role="list">
+        @for (house of houses(); track house.url) {
+        <mat-list-item role="listitem">
+          <mat-grid-list cols="2">
+            <mat-grid-tile>
+              <a [routerLink]="['/list', 'book', house.url.split('/').pop()]">
+                {{ house.name }}
+              </a>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              @if (!isInFavorites(house.url.split('/').pop(), 'house')) {
+              <a
+                matMiniFab
+                aria-label="Add to favorites"
+                (click)="onAddToFavorites(house.url.split('/').pop() ?? '', house, 'house')"
+              >
+                <mat-icon>favorite</mat-icon>
+              </a>
+              } @else {
+              <a
+                matMiniFab
+                aria-label="Remove from favorites"
+                (click)="onRemoveFromFavorites(house.url.split('/').pop() ?? '', 'house')"
+              >
+                <mat-icon>remove_circle</mat-icon>
+              </a>
+              }
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-list-item>
+        } @empty {
+        <p>No Records found</p>
+        }
+      </mat-list>
+    </mat-tab>
+  </mat-tab-group>
+</section>
